@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulasi Pengantaran Makanan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .order {
+        margin: 20px 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      select {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 100%;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  </head>
+  <body>
+    <h1>Simulasi Pengantaran Makanan</h1>
+    <div class="order">
+      <label for="product">Pilih Produk:</label>
+      <select id="product" required>
+        <option value="Nasi Goreng">Nasi Goreng</option>
+        <option value="Mie Goreng">Mie Goreng</option>
+        <option value="Sate Ayam">Sate Ayam</option>
+        <option value="Bakso">Bakso</option>
+        <option value="Soto">Soto</option>
+        <option value="Nasi Padang">Nasi Padang</option>
+      </select>
+
+      <button id="useCurrentLocation">Gunakan Lokasi Saat Ini</button>
+      <div id="locationInfo"></div>
+
+      <button id="calculate">Hitung Tarif dan Tampilkan Rute</button>
+
+      <p id="result"></p>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
